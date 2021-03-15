@@ -55,7 +55,7 @@ pipeline {
       steps{    
         sh "chmod +x changeTag.sh"
         sh "./changeTag.sh ${DOCKER_TAG}"
-        withKubeConfig([credentialsId: 'kubeconfig-clusterjcde', serverUrl: 'https://34.101.152.59']){
+        withKubeConfig([credentialsId: 'kubeconfig-clusterjcde', serverUrl: 'https://34.101.105.44']){
           sh 'kubectl apply -f wordpress-config.k8s.yaml'    
         }      
       }    
