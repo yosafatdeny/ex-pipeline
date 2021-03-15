@@ -44,11 +44,11 @@ pipeline {
     // }  
 
     //stage kelima
-    stage ('clean up docker images'){
-      steps{    
-        sh 'docker rmi yosafatdeny/reactapp-jcde:latest'    
-      }    
-    } 
+    // stage ('clean up docker images'){
+    //   steps{    
+    //     sh 'docker rmi yosafatdeny/reactapp-jcde:latest'    
+    //   }    
+    // } 
 
     //stage keenam
     stage ('deploy app to kubernetes cluster'){
