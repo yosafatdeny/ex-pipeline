@@ -1,0 +1,10 @@
+FROM wordpress
+
+#SET WORKING DIRECTORY
+WORKDIR /usr/share/nginx/html/
+
+#COPY FILE FROM BUILD DIRECTORY
+COPY build/ .
+
+#EXPOSE PORT KE 80
+EXPOSE 80
