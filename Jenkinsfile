@@ -51,7 +51,7 @@ pipeline {
     // } 
 
     //stage keenam
-    stage ('deploy app to kubernetes cluster'){
+    stage ('deploy app to kubernetes clusterr'){
       steps{    
         sh "chmod +x changeTag.sh"
         sh "./changeTag.sh ${DOCKER_TAG}"
