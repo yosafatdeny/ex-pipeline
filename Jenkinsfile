@@ -8,7 +8,7 @@ pipeline {
 
   stages {
     //stage pertama
-    stage ('Build docker image'){
+    stage ('Build docker images'){
       steps{    
         script {
           app = docker.build("wordpress") 
@@ -32,16 +32,16 @@ pipeline {
     // }   
 
     //stage keempat
-    stage ('push image to registry'){
-      steps{    
-        script{
-          docker.withRegistry("https://registry.hub.docker.com", "dockerhub-yosafatdeny"){
-            app.push("${DOCKER_TAG}")
-            app.push("latest")    
-          }    
-        }    
-      }    
-    }  
+    // stage ('push image to registry'){
+    //   steps{    
+    //     script{
+    //       docker.withRegistry("https://registry.hub.docker.com", "dockerhub-yosafatdeny"){
+    //         app.push("${DOCKER_TAG}")
+    //         app.push("latest")    
+    //       }    
+    //     }    
+    //   }    
+    // }  
 
     //stage kelima
     stage ('clean up docker images'){
